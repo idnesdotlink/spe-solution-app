@@ -1,0 +1,204 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
+      "d3-array": [
+        "./node_modules/d3-array"
+      ],
+      "d3-array/*": [
+        "./node_modules/d3-array/*"
+      ],
+      "d3-axis": [
+        "./node_modules/d3-axis"
+      ],
+      "d3-axis/*": [
+        "./node_modules/d3-axis/*"
+      ],
+      "d3-brush": [
+        "./node_modules/d3-brush"
+      ],
+      "d3-brush/*": [
+        "./node_modules/d3-brush/*"
+      ],
+      "d3-color": [
+        "./node_modules/d3-color"
+      ],
+      "d3-color/*": [
+        "./node_modules/d3-color/*"
+      ],
+      "d3-force": [
+        "./node_modules/d3-force"
+      ],
+      "d3-force/*": [
+        "./node_modules/d3-force/*"
+      ],
+      "d3-format": [
+        "./node_modules/d3-format"
+      ],
+      "d3-format/*": [
+        "./node_modules/d3-format/*"
+      ],
+      "d3-hierarchy": [
+        "./node_modules/d3-hierarchy"
+      ],
+      "d3-hierarchy/*": [
+        "./node_modules/d3-hierarchy/*"
+      ],
+      "d3-interpolate": [
+        "./node_modules/d3-interpolate"
+      ],
+      "d3-interpolate/*": [
+        "./node_modules/d3-interpolate/*"
+      ],
+      "d3-path": [
+        "./node_modules/d3-path"
+      ],
+      "d3-path/*": [
+        "./node_modules/d3-path/*"
+      ],
+      "d3-polygon": [
+        "./node_modules/d3-polygon"
+      ],
+      "d3-polygon/*": [
+        "./node_modules/d3-polygon/*"
+      ],
+      "d3-scale": [
+        "./node_modules/d3-scale"
+      ],
+      "d3-scale/*": [
+        "./node_modules/d3-scale/*"
+      ],
+      "d3-selection": [
+        "./node_modules/d3-selection"
+      ],
+      "d3-selection/*": [
+        "./node_modules/d3-selection/*"
+      ],
+      "d3-transition": [
+        "./node_modules/d3-transition"
+      ],
+      "d3-transition/*": [
+        "./node_modules/d3-transition/*"
+      ],
+      "d3-shape": [
+        "./node_modules/d3-shape"
+      ],
+      "d3-shape/*": [
+        "./node_modules/d3-shape/*"
+      ],
+      "d3-time-format": [
+        "./node_modules/d3-time-format"
+      ],
+      "d3-time-format/*": [
+        "./node_modules/d3-time-format/*"
+      ],
+      "d3-zoom": [
+        "./node_modules/d3-zoom"
+      ],
+      "d3-zoom/*": [
+        "./node_modules/d3-zoom/*"
+      ],
+      "mask-lib": [
+        "dist/mask-lib"
+      ],
+      "mask-lib/*": [
+        "dist/mask-lib/*"
+      ],
+      "chart-lib": [
+        "dist/chart-lib"
+      ],
+      "chart-lib/*": [
+        "dist/chart-lib/*"
+      ],
+      "color-picker-lib": [
+        "dist/color-picker-lib"
+      ],
+      "color-picker-lib/*": [
+        "dist/color-picker-lib/*"
+      ],
+      "ngx-markdown": [
+        "dist/ngx-markdown"
+      ],
+      "ngx-markdown/*": [
+        "dist/ngx-markdown/*"
+      ],
+      "ngx-charts": [
+        "dist/ngx-charts",
+        "dist/ngx-charts"
+      ],
+      "ngx-charts/*": [
+        "dist/ngx-charts/*",
+        "dist/ngx-charts/*"
+      ],
+      "ngx-charts-sample": [
+        "dist/ngx-charts-sample"
+      ],
+      "ngx-charts-sample/*": [
+        "dist/ngx-charts-sample/*"
+      ],
+      "lib-barcode": [
+        "dist/lib-barcode"
+      ],
+      "lib-barcode/*": [
+        "dist/lib-barcode/*"
+      ],
+      "lib-qrcode": [
+        "dist/lib-qrcode"
+      ],
+      "lib-qrcode/*": [
+        "dist/lib-qrcode/*"
+      ],
+      "ngx-color-picker": [
+        "dist/ngx-color-picker"
+      ],
+      "ngx-color-picker/*": [
+        "dist/ngx-color-picker/*"
+      ],
+      "ngx-color-picker-demo": [
+        "dist/ngx-color-picker-demo"
+      ],
+      "ngx-color-picker-demo/*": [
+        "dist/ngx-color-picker-demo/*"
+      ],
+      "ngx-mask": [
+        "dist/ngx-mask",
+        "dist/ngx-mask",
+        "dist/ngx-mask",
+        "dist/ngx-mask"
+      ],
+      "ngx-mask/*": [
+        "dist/ngx-mask/*",
+        "dist/ngx-mask/*",
+        "dist/ngx-mask/*",
+        "dist/ngx-mask/*"
+      ],
+      "ngx-window-token": [
+        "dist/ngx-window-token"
+      ],
+      "ngx-window-token/*": [
+        "dist/ngx-window-token/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<mat-list role="list">
+  <mat-list-item role="listitem">
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    <span>test <mat-slider></mat-slider></span>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item role="listitem">
+    <span>test 2 {{ sval }}</span>
+    <mat-slider style="flex: 1;" [(ngModel)]="sval"></mat-slider>
+  </mat-list-item>
+  <mat-list-item role="listitem">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </mat-list-item>
+</mat-list>

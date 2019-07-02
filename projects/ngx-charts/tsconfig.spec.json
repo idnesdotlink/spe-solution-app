@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/spec",
+    "types": [
+      "jasmine",
+      "node",
+      "d3-array",
+      "d3-brush",
+      "d3-color",
+      "d3-force",
+      "d3-format",
+      "d3-hierarchy",
+      "d3-interpolate",
+      "d3-scale",
+      "d3-selection",
+      "d3-shape",
+      "d3-time-format",
+      "d3-transition"
+    ]
+  },
+  "files": [
+    "src/test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}
