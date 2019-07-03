@@ -198,6 +198,12 @@
       ],
       "ngx-window-token/*": [
         "dist/ngx-window-token/*"
+      ],
+      "ngx-clipboard": [
+        "dist/ngx-clipboard"
+      ],
+      "ngx-clipboard/*": [
+        "dist/ngx-clipboard/*"
       ]
     }
   }
