@@ -204,6 +204,14 @@
       ],
       "ngx-clipboard/*": [
         "dist/ngx-clipboard/*"
+      ],
+      "ngx-clipboard-demo": [
+        "dist/ngx-clipboard-demo",
+        "dist/ngx-clipboard-demo"
+      ],
+      "ngx-clipboard-demo/*": [
+        "dist/ngx-clipboard-demo/*",
+        "dist/ngx-clipboard-demo/*"
       ]
     }
   }

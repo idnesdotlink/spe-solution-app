@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxClipboardComponent } from './ngx-clipboard.component';
+import { NgxClipboardDemoComponent } from './ngx-clipboard-demo.component';
 
-describe('NgxClipboardComponent', () => {
-  let component: NgxClipboardComponent;
-  let fixture: ComponentFixture<NgxClipboardComponent>;
+describe('NgxClipboardDemoComponent', () => {
+  let component: NgxClipboardDemoComponent;
+  let fixture: ComponentFixture<NgxClipboardDemoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxClipboardComponent ]
+      declarations: [ NgxClipboardDemoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxClipboardComponent);
+    fixture = TestBed.createComponent(NgxClipboardDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

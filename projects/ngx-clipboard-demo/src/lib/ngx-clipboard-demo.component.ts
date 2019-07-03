@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-clipboard',
+  selector: 'lib-ngx-clipboard-demo',
   template: `
     <p>
-      ngx-clipboard works!
+      ngx-clipboard-demo works!
     </p>
   `,
   styles: []
 })
-export class NgxClipboardComponent implements OnInit {
+export class NgxClipboardDemoComponent implements OnInit {
 
   constructor() { }
 

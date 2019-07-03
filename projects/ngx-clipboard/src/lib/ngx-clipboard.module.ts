@@ -1,12 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NgxClipboardComponent } from './ngx-clipboard.component';
 
-
+import { ClipboardDirective } from './ngx-clipboard.directive';
+import { ClipboardIfSupportedDirective } from './ngx-clipboard-if-supported.directive';
 
 @NgModule({
-  declarations: [NgxClipboardComponent],
-  imports: [
-  ],
-  exports: [NgxClipboardComponent]
+    imports: [CommonModule],
+    declarations: [ClipboardDirective, ClipboardIfSupportedDirective],
+    exports: [ClipboardDirective, ClipboardIfSupportedDirective]
 })
-export class NgxClipboardModule { }
+export class ClipboardModule {}
