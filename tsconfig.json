@@ -212,6 +212,12 @@
       "ngx-clipboard-demo/*": [
         "dist/ngx-clipboard-demo/*",
         "dist/ngx-clipboard-demo/*"
+      ],
+      "ngx-split": [
+        "dist/ngx-split"
+      ],
+      "ngx-split/*": [
+        "dist/ngx-split/*"
       ]
     }
   }
