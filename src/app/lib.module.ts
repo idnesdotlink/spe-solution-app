@@ -6,6 +6,8 @@ import { ColorPickerLibModule } from 'color-picker-lib';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgxColorPickerModule } from 'ngx-color-picker';
 import { NgxColorPickerDemoModule } from 'ngx-color-picker-demo';
+import { ClipboardModule } from 'ngx-clipboard';
+import { NgxClipboardDemoModule } from 'ngx-clipboard-demo';
 
 @NgModule({
   declarations: [],
@@ -16,7 +18,9 @@ import { NgxColorPickerDemoModule } from 'ngx-color-picker-demo';
     ColorPickerLibModule,
     MarkdownModule.forRoot(),
     NgxColorPickerModule,
-    NgxColorPickerDemoModule
+    NgxColorPickerDemoModule,
+    ClipboardModule,
+    NgxClipboardDemoModule
   ],
   exports: [
     NgxChartsModule,
@@ -24,7 +28,9 @@ import { NgxColorPickerDemoModule } from 'ngx-color-picker-demo';
     ColorPickerLibModule,
     MarkdownModule,
     NgxColorPickerModule,
-    NgxColorPickerDemoModule
+    NgxColorPickerDemoModule,
+    ClipboardModule,
+    NgxClipboardDemoModule
   ]
 })
 export class LibModule { }
