@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScreenPreferenceComponent } from './screen-preference.component';
+import { SharedModule } from '../../shared.module';
 
 describe('ScreenPreferenceComponent', () => {
   let component: ScreenPreferenceComponent;
@@ -8,9 +9,10 @@ describe('ScreenPreferenceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenPreferenceComponent ]
+      imports: [SharedModule],
+      declarations: [ScreenPreferenceComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

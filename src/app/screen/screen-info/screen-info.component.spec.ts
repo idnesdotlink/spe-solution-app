@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScreenInfoComponent } from './screen-info.component';
+import { SharedModule } from '../../shared.module';
 
 describe('ScreenInfoComponent', () => {
   let component: ScreenInfoComponent;
@@ -8,9 +9,10 @@ describe('ScreenInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenInfoComponent ]
+      imports: [SharedModule],
+      declarations: [ScreenInfoComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

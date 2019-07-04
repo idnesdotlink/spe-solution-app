@@ -8,6 +8,8 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 
+import { NgxChartsModule } from 'ngx-charts';
+
 declare const require: any;
 
 // First, initialize the Angular testing environment.
@@ -15,6 +17,10 @@ getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting()
 );
+
+getTestBed().configureTestingModule({
+  imports: [NgxChartsModule]
+});
 // Then we find all the tests.
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.

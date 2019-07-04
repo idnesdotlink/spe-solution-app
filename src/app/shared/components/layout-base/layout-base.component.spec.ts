@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LayoutBaseComponent } from './layout-base.component';
+import { NavDevComponent } from '../nav-dev/nav-dev.component';
+import { MaterialModule } from '../../../material.module';
 
 describe('LayoutBaseComponent', () => {
   let component: LayoutBaseComponent;
@@ -8,9 +10,10 @@ describe('LayoutBaseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LayoutBaseComponent ]
+      declarations: [NavDevComponent, LayoutBaseComponent],
+      imports: [MaterialModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

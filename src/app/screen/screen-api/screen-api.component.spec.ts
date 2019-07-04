@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScreenApiComponent } from './screen-api.component';
+import { SharedModule } from '../../shared.module';
 
 describe('ScreenApiComponent', () => {
   let component: ScreenApiComponent;
@@ -8,9 +9,10 @@ describe('ScreenApiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenApiComponent ]
+      imports: [SharedModule],
+      declarations: [ScreenApiComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

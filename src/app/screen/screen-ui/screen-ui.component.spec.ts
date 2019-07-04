@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScreenUiComponent } from './screen-ui.component';
+import { SharedModule } from '../../shared.module';
 
 describe('ScreenUiComponent', () => {
   let component: ScreenUiComponent;
@@ -8,9 +9,12 @@ describe('ScreenUiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenUiComponent ]
+      imports: [
+        SharedModule
+      ],
+      declarations: [ScreenUiComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

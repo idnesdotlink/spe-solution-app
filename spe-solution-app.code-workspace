@@ -2,15 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "/home/idnes/Projects/ngx-clipboard"
-		},
-		{
-			"path": "/home/idnes/Projects/ngx-contextmenu"
-		},
-		{
-			"path": "/home/idnes/Projects/angular-split"
 		}
 	],
 	"settings": {}
