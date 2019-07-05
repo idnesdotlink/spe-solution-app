@@ -13,7 +13,7 @@ import { AppRootComponent } from './shared/components/app-root/app-root.componen
     AppRootComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule
