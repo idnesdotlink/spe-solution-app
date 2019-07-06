@@ -218,6 +218,12 @@
       ],
       "ngx-split/*": [
         "dist/ngx-split/*"
+      ],
+      "ngx-image-cropper": [
+        "dist/ngx-image-cropper"
+      ],
+      "ngx-image-cropper/*": [
+        "dist/ngx-image-cropper/*"
       ]
     }
   }
