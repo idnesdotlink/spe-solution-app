@@ -13,7 +13,8 @@
     "serve:php": "php -S 127.0.0.1:8090 -t ./dist/spe-solution-app",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "universal": "yarn run build:ssr && yarn run serve:ssr",
+    "build:ssr": "yarn run build:client-and-server-bundles && yarn run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run spe-solution-app:server:production --bundleDependencies all"
   },
   "private": true,
