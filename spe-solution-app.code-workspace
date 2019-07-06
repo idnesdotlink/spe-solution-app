@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/idnes/Projects/ulah-web"
 		}
 	],
 	"settings": {}
