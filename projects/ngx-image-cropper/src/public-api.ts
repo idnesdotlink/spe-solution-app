@@ -2,6 +2,7 @@
  * Public API Surface of ngx-image-cropper
  */
 
-export * from './lib/ngx-image-cropper.service';
-export * from './lib/ngx-image-cropper.component';
-export * from './lib/ngx-image-cropper.module';
+export { ImageCropperModule } from './lib/image-cropper.module';
+export { OutputType, ImageCropperComponent } from './lib/component/image-cropper.component';
+export { CropperPosition } from './lib/interfaces/cropper-position.interface';
+export { ImageCroppedEvent } from './lib/interfaces/image-cropped-event.interface';
