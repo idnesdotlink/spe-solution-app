@@ -8,9 +8,11 @@ import { NgxColorPickerModule } from 'ngx-color-picker';
 import { NgxColorPickerDemoModule } from 'ngx-color-picker-demo';
 import { ClipboardModule } from 'ngx-clipboard';
 import { NgxClipboardDemoModule } from 'ngx-clipboard-demo';
+import { LibTooltipModule } from 'lib-tooltip';
 
 @NgModule({
   declarations: [],
+  entryComponents: [],
   imports: [
     CommonModule,
     NgxChartsModule,
@@ -20,7 +22,8 @@ import { NgxClipboardDemoModule } from 'ngx-clipboard-demo';
     NgxColorPickerModule,
     NgxColorPickerDemoModule,
     ClipboardModule,
-    NgxClipboardDemoModule
+    NgxClipboardDemoModule,
+    LibTooltipModule
   ],
   exports: [
     NgxChartsModule,
@@ -30,7 +33,8 @@ import { NgxClipboardDemoModule } from 'ngx-clipboard-demo';
     NgxColorPickerModule,
     NgxColorPickerDemoModule,
     ClipboardModule,
-    NgxClipboardDemoModule
+    NgxClipboardDemoModule,
+    LibTooltipModule
   ]
 })
 export class LibModule { }

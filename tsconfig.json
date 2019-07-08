@@ -224,6 +224,12 @@
       ],
       "ngx-image-cropper/*": [
         "dist/ngx-image-cropper/*"
+      ],
+      "lib-tooltip": [
+        "dist/lib-tooltip"
+      ],
+      "lib-tooltip/*": [
+        "dist/lib-tooltip/*"
       ]
     }
   }
