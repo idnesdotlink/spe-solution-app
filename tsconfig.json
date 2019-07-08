@@ -230,6 +230,12 @@
       ],
       "lib-tooltip/*": [
         "dist/lib-tooltip/*"
+      ],
+      "lib-tooltip2": [
+        "dist/lib-tooltip2"
+      ],
+      "lib-tooltip2/*": [
+        "dist/lib-tooltip2/*"
       ]
     }
   }
