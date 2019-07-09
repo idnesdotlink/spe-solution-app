@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
-  selector: 'lib-awesome-tooltip',
+  selector: 'awesome-tooltip',
   templateUrl: 'awesome-tooltip.component.html',
   styleUrls: ['awesome-tooltip.component.scss'],
   animations: [

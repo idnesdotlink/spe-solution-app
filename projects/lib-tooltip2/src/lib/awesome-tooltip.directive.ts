@@ -5,7 +5,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { AwesomeTooltipComponent } from './awesome-tooltip/awesome-tooltip.component';
 
 @Directive({
-  selector: '[libAwesomeTooltip]'
+  selector: '[awesomeTooltip]'
 })
 export class AwesomeTooltipDirective implements OnInit {
 

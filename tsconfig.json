@@ -144,11 +144,9 @@
         "dist/ngx-markdown/*"
       ],
       "ngx-charts": [
-        "dist/ngx-charts",
         "dist/ngx-charts"
       ],
       "ngx-charts/*": [
-        "dist/ngx-charts/*",
         "dist/ngx-charts/*"
       ],
       "ngx-charts-sample": [
@@ -182,15 +180,9 @@
         "dist/ngx-color-picker-demo/*"
       ],
       "ngx-mask": [
-        "dist/ngx-mask",
-        "dist/ngx-mask",
-        "dist/ngx-mask",
         "dist/ngx-mask"
       ],
       "ngx-mask/*": [
-        "dist/ngx-mask/*",
-        "dist/ngx-mask/*",
-        "dist/ngx-mask/*",
         "dist/ngx-mask/*"
       ],
       "ngx-window-token": [
@@ -206,11 +198,9 @@
         "dist/ngx-clipboard/*"
       ],
       "ngx-clipboard-demo": [
-        "dist/ngx-clipboard-demo",
         "dist/ngx-clipboard-demo"
       ],
       "ngx-clipboard-demo/*": [
-        "dist/ngx-clipboard-demo/*",
         "dist/ngx-clipboard-demo/*"
       ],
       "ngx-split": [
