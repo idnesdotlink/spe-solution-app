@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "/home/idnes/Projects/ng-module/building-tooltip-directive"
 		}
 	],
 	"settings": {}

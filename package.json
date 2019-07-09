@@ -52,6 +52,7 @@
     "d3-time-format": "^2.1.3",
     "d3-transition": "^1.2.0",
     "d3-zoom": "^1.7.3",
+    "dayjs": "^1.8.15",
     "dexie": "^2.0.4",
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
