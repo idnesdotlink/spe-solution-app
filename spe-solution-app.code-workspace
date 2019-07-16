@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/idnes/Projects/ng-module/ngx-bar-rating"
 		}
 	],
 	"settings": {}
