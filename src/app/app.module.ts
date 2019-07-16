@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
+import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +20,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { CoffeeOrderService } from './services/firebase/coffee-order.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +33,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
     SharedModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -40,7 +52,21 @@ import { HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([AppEffects])
   ],
   exports: [],
-  providers: [],
+  providers: [
+    CoffeeOrderService,
+    [{
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: "http://127.0.0.1:4000"
+          })
+        }
+      },
+      deps: [HttpLink]
+    }]
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

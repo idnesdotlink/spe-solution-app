@@ -781,6 +781,41 @@
           }
         }
       }
+    },
+    "ngx-rating": {
+      "projectType": "library",
+      "root": "projects/ngx-rating",
+      "sourceRoot": "projects/ngx-rating/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-rating/tsconfig.lib.json",
+            "project": "projects/ngx-rating/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-rating/src/test.ts",
+            "tsConfig": "projects/ngx-rating/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-rating/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-rating/tsconfig.lib.json",
+              "projects/ngx-rating/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "spe-solution-app"

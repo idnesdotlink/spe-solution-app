@@ -39,6 +39,7 @@ import { LibModule } from './lib.module';
   exports: [
     CommonModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     CdkModule,
     LibModule,

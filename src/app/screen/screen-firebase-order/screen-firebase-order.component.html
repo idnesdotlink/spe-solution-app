@@ -1,0 +1,33 @@
+<mat-card>
+  <form [formGroup]="this.ordersService.form">
+    <mat-card-content>
+      <h5>Coffee Order:</h5>
+
+      <mat-form-field>
+        <input matInput placeholder="Customer Name" formControlName="customerName" type="text" autocomplete="off" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Order Number" formControlName="orderNumber" type="number" autocomplete="off"
+          min="0" />
+      </mat-form-field>
+      <mat-list *ngFor="let coffee of coffees">
+        <mat-list-item>
+          <button mat-raised-button [color]="'accent'" (click)="addCoffee(coffee)">{{ coffee }}</button>
+        </mat-list-item>
+      </mat-list>
+
+      <mat-chip-list role="list" *ngFor="let coffee of coffeeOrder">
+        <mat-chip role="listitem" (removed)="removeCoffee(coffee)">
+          {{ coffee }}
+          <mat-icon matChipRemove [color]="'accent'">cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Order
+      </button>
+
+    </mat-card-content>
+  </form>
+</mat-card>

@@ -7,6 +7,9 @@ import { ScreenInfoComponent } from './screen/screen-info/screen-info.component'
 import { ScreenPreferenceComponent } from './screen/screen-preference/screen-preference.component';
 import { ScreenApiComponent } from './screen/screen-api/screen-api.component';
 import { ScreenUiComponent } from './screen/screen-ui/screen-ui.component';
+import { ScreenGraphqlComponent } from './screen/screen-graphql/screen-graphql.component';
+import { ScreenFirebaseOrderComponent } from './screen/screen-firebase-order/screen-firebase-order.component';
+import { ScreenFirebaseOrderListComponent } from './screen/screen-firebase-order-list/screen-firebase-order-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'info', component: ScreenInfoComponent },
   { path: 'preference', component: ScreenPreferenceComponent },
   { path: 'api', component: ScreenApiComponent },
-  { path: 'ui', component: ScreenUiComponent }
+  { path: 'ui', component: ScreenUiComponent },
+  { path: 'graphql', component: ScreenGraphqlComponent },
+  { path: 'fb-order', component: ScreenFirebaseOrderComponent },
+  { path: 'fb-order-list', component: ScreenFirebaseOrderListComponent }
 ];
 
 @NgModule({
@@ -26,7 +32,10 @@ const routes: Routes = [
     ScreenInfoComponent,
     ScreenPreferenceComponent,
     ScreenApiComponent,
-    ScreenUiComponent
+    ScreenUiComponent,
+    ScreenGraphqlComponent,
+    ScreenFirebaseOrderComponent,
+    ScreenFirebaseOrderListComponent
   ],
   imports: [
     SharedModule,

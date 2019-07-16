@@ -226,6 +226,12 @@
       ],
       "lib-tooltip2/*": [
         "dist/lib-tooltip2/*"
+      ],
+      "ngx-rating": [
+        "dist/ngx-rating"
+      ],
+      "ngx-rating/*": [
+        "dist/ngx-rating/*"
       ]
     }
   }
