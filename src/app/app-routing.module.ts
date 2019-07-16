@@ -13,9 +13,9 @@ import { ScreenFirebaseOrderListComponent } from './screen/screen-firebase-order
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'dashboard', component: ScreenDashboardComponent },
-  { path: 'login', component: ScreenLoginComponent },
-  { path: 'info', component: ScreenInfoComponent },
+  { path: 'dashboard', component: ScreenDashboardComponent, data: { animation: 'AboutPage' } },
+  { path: 'login', component: ScreenLoginComponent, data: { animation: 'HomePage' } },
+  { path: 'info', component: ScreenInfoComponent, data: { animation: 'FilterPage' } },
   { path: 'preference', component: ScreenPreferenceComponent },
   { path: 'api', component: ScreenApiComponent },
   { path: 'ui', component: ScreenUiComponent },
