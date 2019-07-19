@@ -27,7 +27,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/firenase-messaging-sw.js"
+              "src/firebase-messaging-sw.js"
             ],
             "styles": [
               "./node_modules/typeface-roboto/index.css",

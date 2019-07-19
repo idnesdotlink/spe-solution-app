@@ -22,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireMessagingModule, AngularFireMessaging } from '@angular/fire/messaging';
 import { CoffeeOrderService } from './services/firebase/coffee-order.service';
+import { MessagingService } from './services/firebase/messaging.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +41,11 @@ import { CoffeeOrderService } from './services/firebase/coffee-order.service';
     HttpLinkModule,
     SharedModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -54,6 +61,7 @@ import { CoffeeOrderService } from './services/firebase/coffee-order.service';
   exports: [],
   providers: [
     CoffeeOrderService,
+    MessagingService,
     [{
       provide: APOLLO_OPTIONS,
       useFactory: (httpLink: HttpLink) => {
