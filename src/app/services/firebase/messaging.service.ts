@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 
-import * as take from 'rxjs/operator/take';
+import { take } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
