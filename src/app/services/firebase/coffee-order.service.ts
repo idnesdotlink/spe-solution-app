@@ -15,6 +15,12 @@ export class CoffeeOrderService {
     completed: new FormControl(false)
   });
 
+  localData() {
+    this.firestore.firestore.enablePersistence().catch(err => {
+      console.log(err);
+    })
+  }
+
   //Firestore CRUD actions example
   createCoffeeOrder(data) {
     return new Promise<any>((resolve, reject) => {

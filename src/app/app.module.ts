@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
@@ -28,6 +28,8 @@ import { AngularFireMessagingModule, AngularFireMessaging } from '@angular/fire/
 import { CoffeeOrderService } from './services/firebase/coffee-order.service';
 import { MessagingService } from './services/firebase/messaging.service';
 
+import { appInit } from './appInit';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +43,11 @@ import { MessagingService } from './services/firebase/messaging.service';
     HttpLinkModule,
     SharedModule,
     AppRoutingModule,
-    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireMessagingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -60,6 +62,12 @@ import { MessagingService } from './services/firebase/messaging.service';
   ],
   exports: [],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInit,
+      multi: true,
+      deps: []
+    },
     CoffeeOrderService,
     MessagingService,
     [{
