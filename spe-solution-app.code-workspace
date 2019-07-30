@@ -4,7 +4,19 @@
 			"path": "."
 		},
 		{
-			"path": "/home/idnes/Projects/ng-module/ngx-bar-rating"
+			"path": "/home/idnes/Projects/angular-project/awe"
+		},
+		{
+			"path": "/home/idnes/Projects/angular-project/sorting-algorithms-javascript-master"
+		},
+		{
+			"path": "/home/idnes/Projects/angular-project/algorithms-master"
+		},
+		{
+			"path": "/home/idnes/Projects/angular-project/belajar-algoritma-typescript"
+		},
+		{
+			"path": "/home/idnes/Projects/python"
 		}
 	],
 	"settings": {}
