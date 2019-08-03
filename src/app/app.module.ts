@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 
-import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
-import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+// import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
+// import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
+// import { InMemoryCache } from "apollo-cache-inmemory";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,8 +39,8 @@ import { appInit } from './appInit';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     HttpClientModule,
-    ApolloModule,
-    HttpLinkModule,
+    // ApolloModule,
+    // HttpLinkModule,
     SharedModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -70,18 +70,18 @@ import { appInit } from './appInit';
     },
     CoffeeOrderService,
     MessagingService,
-    [{
-      provide: APOLLO_OPTIONS,
-      useFactory: (httpLink: HttpLink) => {
-        return {
-          cache: new InMemoryCache(),
-          link: httpLink.create({
-            uri: "http://127.0.0.1:4000"
-          })
-        }
-      },
-      deps: [HttpLink]
-    }]
+    // [{
+    //   provide: APOLLO_OPTIONS,
+    //   useFactory: (httpLink: HttpLink) => {
+    //     return {
+    //       cache: new InMemoryCache(),
+    //       link: httpLink.create({
+    //         uri: "http://127.0.0.1:4000"
+    //       })
+    //     }
+    //   },
+    //   deps: [HttpLink]
+    // }]
   ],
   bootstrap: [AppComponent]
 })
