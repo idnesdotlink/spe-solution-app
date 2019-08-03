@@ -19,5 +19,9 @@
 			"path": "/home/idnes/Projects/python"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.colorCustomizations": {
+			"tab.unfocusedActiveBorder": "#fff0"
+		}
+	}
 }
