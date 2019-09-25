@@ -1,19 +1,34 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ElementRef, ViewChild, HostListener, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  ViewChild,
+  HostListener,
+  ViewEncapsulation,
+  ElementRef,
+  ChangeDetectorRef
+} from "@angular/core";
 
-import { NgxColorPickerService } from './ngx-color-picker.service'
+import { NgxColorPickerService } from "./ngx-color-picker.service";
 
-import { ColorFormats, Cmyk, Hsla, Hsva, Rgba } from './formats';
-import { AlphaChannel, OutputFormat, SliderDimension, SliderPosition, detectIE } from './helpers';
+import { ColorFormats, Cmyk, Hsla, Hsva, Rgba } from "./formats";
+import {
+  AlphaChannel,
+  OutputFormat,
+  SliderDimension,
+  SliderPosition,
+  detectIE
+} from "./helpers";
 
 @Component({
-  selector: 'lib-ngx-color-picker',
-  templateUrl: 'ngx-color-picker.component.html',
-  styleUrls: [
-    'ngx-color-picker.component.css'
-  ],
+  selector: "lib-ngx-color-picker",
+  templateUrl: "ngx-color-picker.component.html",
+  styleUrls: ["ngx-color-picker.component.css"],
   encapsulation: ViewEncapsulation.None
 })
-export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NgxColorPickerComponent
+  implements OnInit, OnDestroy, AfterViewInit {
   private isIE10: boolean = false;
 
   private cmyk: Cmyk;
@@ -48,88 +63,96 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
 
   private useRootViewContainer: boolean = false;
 
-  show: boolean;
-  hidden: boolean;
+  public show: boolean;
+  public hidden: boolean;
 
-  top: number;
-  left: number;
-  position: string;
+  public top: number;
+  public left: number;
+  public position: string;
 
-  format: ColorFormats;
-  slider: SliderPosition;
+  public format: ColorFormats;
+  public slider: SliderPosition;
 
-  hexText: string;
-  hexAlpha: number;
+  public hexText: string;
+  public hexAlpha: number;
 
-  cmykText: Cmyk;
-  hslaText: Hsla;
-  rgbaText: Rgba;
+  public cmykText: Cmyk;
+  public hslaText: Hsla;
+  public rgbaText: Rgba;
 
-  arrowTop: number;
+  public arrowTop: number;
 
-  selectedColor: string;
-  hueSliderColor: string;
-  alphaSliderColor: string;
+  public selectedColor: string;
+  public hueSliderColor: string;
+  public alphaSliderColor: string;
 
-  cpWidth: number;
-  cpHeight: number;
+  public cpWidth: number;
+  public cpHeight: number;
 
-  cpColorMode: number;
+  public cpColorMode: number;
 
-  cpCmykEnabled: boolean;
+  public cpCmykEnabled: boolean;
 
-  cpAlphaChannel: AlphaChannel;
-  cpOutputFormat: OutputFormat;
+  public cpAlphaChannel: AlphaChannel;
+  public cpOutputFormat: OutputFormat;
 
-  cpDisableInput: boolean;
-  cpDialogDisplay: string;
+  public cpDisableInput: boolean;
+  public cpDialogDisplay: string;
 
-  cpIgnoredElements: any;
+  public cpIgnoredElements: any;
 
-  cpSaveClickOutside: boolean;
-  cpCloseClickOutside: boolean;
+  public cpSaveClickOutside: boolean;
+  public cpCloseClickOutside: boolean;
 
-  cpPosition: string;
-  cpPositionOffset: number;
+  public cpPosition: string;
+  public cpUsePosition: string;
+  public cpPositionOffset: number;
 
-  cpOKButton: boolean;
-  cpOKButtonText: string;
-  cpOKButtonClass: string;
+  public cpOKButton: boolean;
+  public cpOKButtonText: string;
+  public cpOKButtonClass: string;
 
-  cpCancelButton: boolean;
-  cpCancelButtonText: string;
-  cpCancelButtonClass: string;
+  public cpCancelButton: boolean;
+  public cpCancelButtonText: string;
+  public cpCancelButtonClass: string;
 
-  cpPresetLabel: string;
-  cpPresetColors: string[];
-  cpMaxPresetColorsLength: number;
+  public cpPresetLabel: string;
+  public cpPresetColors: string[];
+  public cpPresetColorsClass: string;
+  public cpMaxPresetColorsLength: number;
 
-  cpPresetEmptyMessage: string;
-  cpPresetEmptyMessageClass: string;
+  public cpPresetEmptyMessage: string;
+  public cpPresetEmptyMessageClass: string;
 
-  cpAddColorButton: boolean;
-  cpAddColorButtonText: string;
-  cpAddColorButtonClass: string;
-  cpRemoveColorButtonClass: string;
+  public cpAddColorButton: boolean;
+  public cpAddColorButtonText: string;
+  public cpAddColorButtonClass: string;
+  public cpRemoveColorButtonClass: string;
 
-  @ViewChild('dialogPopup', { static: true }) dialogElement: ElementRef;
+  @ViewChild("dialogPopup", { static: true }) dialogElement: ElementRef;
 
-  @ViewChild('hueSlider', { static: true }) hueSlider: ElementRef;
-  @ViewChild('alphaSlider', { static: true }) alphaSlider: ElementRef;
+  @ViewChild("hueSlider", { static: true }) hueSlider: ElementRef;
+  @ViewChild("alphaSlider", { static: true }) alphaSlider: ElementRef;
 
-  @HostListener('document:keyup.esc', ['$event']) handleEsc(event: any): void {
-    if (this.show && this.cpDialogDisplay === 'popup') {
+  @HostListener("document:keyup.esc", ["$event"]) handleEsc(event: any): void {
+    if (this.show && this.cpDialogDisplay === "popup") {
       this.onCancelColor(event);
     }
   }
 
-  @HostListener('document:keyup.enter', ['$event']) handleEnter(event: any): void {
-    if (this.show && this.cpDialogDisplay === 'popup') {
+  @HostListener("document:keyup.enter", ["$event"]) handleEnter(
+    event: any
+  ): void {
+    if (this.show && this.cpDialogDisplay === "popup") {
       this.onAcceptColor(event);
     }
   }
 
-  constructor(private elRef: ElementRef, private cdRef: ChangeDetectorRef, private service: NgxColorPickerService) { }
+  constructor(
+    private elRef: ElementRef,
+    private cdRef: ChangeDetectorRef,
+    private service: NgxColorPickerService
+  ) {}
 
   ngOnInit(): void {
     this.slider = new SliderPosition(0, 0, 0, 0);
@@ -137,20 +160,29 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     const hueWidth = this.hueSlider.nativeElement.offsetWidth || 140;
     const alphaWidth = this.alphaSlider.nativeElement.offsetWidth || 140;
 
-    this.sliderDimMax = new SliderDimension(hueWidth, this.cpWidth, 130, alphaWidth);
+    this.sliderDimMax = new SliderDimension(
+      hueWidth,
+      this.cpWidth,
+      130,
+      alphaWidth
+    );
 
     if (this.cpCmykEnabled) {
       this.format = ColorFormats.CMYK;
-    } else if (this.cpOutputFormat === 'rgba') {
+    } else if (this.cpOutputFormat === "rgba") {
       this.format = ColorFormats.RGBA;
-    } else if (this.cpOutputFormat === 'hsla') {
+    } else if (this.cpOutputFormat === "hsla") {
       this.format = ColorFormats.HSLA;
     } else {
       this.format = ColorFormats.HEX;
     }
 
-    this.listenerMouseDown = (event: any) => { this.onMouseDown(event); };
-    this.listenerResize = () => { this.onResize(); };
+    this.listenerMouseDown = (event: any) => {
+      this.onMouseDown(event);
+    };
+    this.listenerResize = () => {
+      this.onResize();
+    };
 
     this.openDialog(this.initialColor, false);
   }
@@ -160,11 +192,16 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   ngAfterViewInit(): void {
-    if (this.cpWidth !== 230 || this.cpDialogDisplay === 'inline') {
+    if (this.cpWidth !== 230 || this.cpDialogDisplay === "inline") {
       const hueWidth = this.hueSlider.nativeElement.offsetWidth || 140;
       const alphaWidth = this.alphaSlider.nativeElement.offsetWidth || 140;
 
-      this.sliderDimMax = new SliderDimension(hueWidth, this.cpWidth, 130, alphaWidth);
+      this.sliderDimMax = new SliderDimension(
+        hueWidth,
+        this.cpWidth,
+        130,
+        alphaWidth
+      );
 
       this.updateColorPicker(false);
 
@@ -172,7 +209,7 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
   }
 
-  openDialog(color: any, emit: boolean = true): void {
+  public openDialog(color: any, emit: boolean = true): void {
     this.service.setActive(this);
 
     if (!this.width) {
@@ -190,26 +227,52 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     this.openColorPicker();
   }
 
-  closeDialog(): void {
+  public closeDialog(): void {
     this.closeColorPicker();
   }
 
-  setupDialog(instance: any, elementRef: ElementRef, color: any,
-    cpWidth: string, cpHeight: string, cpDialogDisplay: string, cpFallbackColor: string,
-    cpColorMode: string, cpCmykEnabled: boolean, cpAlphaChannel: AlphaChannel,
-    cpOutputFormat: OutputFormat, cpDisableInput: boolean, cpIgnoredElements: any,
-    cpSaveClickOutside: boolean, cpCloseClickOutside: boolean, cpUseRootViewContainer: boolean,
-    cpPosition: string, cpPositionOffset: string, cpPositionRelativeToArrow: boolean,
-    cpPresetLabel: string, cpPresetColors: string[], cpMaxPresetColorsLength: number,
-    cpPresetEmptyMessage: string, cpPresetEmptyMessageClass: string, cpOKButton: boolean,
-    cpOKButtonClass: string, cpOKButtonText: string, cpCancelButton: boolean,
-    cpCancelButtonClass: string, cpCancelButtonText: string, cpAddColorButton: boolean,
-    cpAddColorButtonClass: string, cpAddColorButtonText: string, cpRemoveColorButtonClass: string): void {
+  public setupDialog(
+    instance: any,
+    elementRef: ElementRef,
+    color: any,
+    cpWidth: string,
+    cpHeight: string,
+    cpDialogDisplay: string,
+    cpFallbackColor: string,
+    cpColorMode: string,
+    cpCmykEnabled: boolean,
+    cpAlphaChannel: AlphaChannel,
+    cpOutputFormat: OutputFormat,
+    cpDisableInput: boolean,
+    cpIgnoredElements: any,
+    cpSaveClickOutside: boolean,
+    cpCloseClickOutside: boolean,
+    cpUseRootViewContainer: boolean,
+    cpPosition: string,
+    cpPositionOffset: string,
+    cpPositionRelativeToArrow: boolean,
+    cpPresetLabel: string,
+    cpPresetColors: string[],
+    cpPresetColorsClass: string,
+    cpMaxPresetColorsLength: number,
+    cpPresetEmptyMessage: string,
+    cpPresetEmptyMessageClass: string,
+    cpOKButton: boolean,
+    cpOKButtonClass: string,
+    cpOKButtonText: string,
+    cpCancelButton: boolean,
+    cpCancelButtonClass: string,
+    cpCancelButtonText: string,
+    cpAddColorButton: boolean,
+    cpAddColorButtonClass: string,
+    cpAddColorButtonText: string,
+    cpRemoveColorButtonClass: string
+  ): void {
     this.setInitialColor(color);
 
     this.setColorMode(cpColorMode);
 
-    this.isIE10 = (detectIE() === 10);
+    this.isIE10 = detectIE() === 10;
 
     this.directiveInstance = instance;
     this.directiveElementRef = elementRef;
@@ -243,10 +306,11 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     this.cpCancelButtonText = cpCancelButtonText;
     this.cpCancelButtonClass = cpCancelButtonClass;
 
-    this.fallbackColor = cpFallbackColor || '#fff';
+    this.fallbackColor = cpFallbackColor || "#fff";
 
     this.setPresetConfig(cpPresetLabel, cpPresetColors);
 
+    this.cpPresetColorsClass = cpPresetColorsClass;
     this.cpMaxPresetColorsLength = cpMaxPresetColorsLength;
     this.cpPresetEmptyMessage = cpPresetEmptyMessage;
     this.cpPresetEmptyMessageClass = cpPresetEmptyMessageClass;
@@ -260,32 +324,35 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
       this.dialogArrowOffset = 0;
     }
 
-    if (cpDialogDisplay === 'inline') {
+    if (cpDialogDisplay === "inline") {
       this.dialogArrowSize = 0;
       this.dialogArrowOffset = 0;
     }
 
-    if (cpOutputFormat === 'hex' &&
-      cpAlphaChannel !== 'always' && cpAlphaChannel !== 'forced') {
-      this.cpAlphaChannel = 'disabled';
+    if (
+      cpOutputFormat === "hex" &&
+      cpAlphaChannel !== "always" &&
+      cpAlphaChannel !== "forced"
+    ) {
+      this.cpAlphaChannel = "disabled";
     }
   }
 
-  setColorMode(mode: string): void {
+  public setColorMode(mode: string): void {
     switch (mode.toString().toUpperCase()) {
-      case '1':
-      case 'C':
-      case 'COLOR':
+      case "1":
+      case "C":
+      case "COLOR":
         this.cpColorMode = 1;
         break;
-      case '2':
-      case 'G':
-      case 'GRAYSCALE':
+      case "2":
+      case "G":
+      case "GRAYSCALE":
         this.cpColorMode = 2;
         break;
-      case '3':
-      case 'P':
-      case 'PRESETS':
+      case "3":
+      case "P":
+      case "PRESETS":
         this.cpColorMode = 3;
         break;
       default:
@@ -293,19 +360,26 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
   }
 
-  setInitialColor(color: any): void {
+  public setInitialColor(color: any): void {
     this.initialColor = color;
   }
 
-  setPresetConfig(cpPresetLabel: string, cpPresetColors: string[]): void {
+  public setPresetConfig(
+    cpPresetLabel: string,
+    cpPresetColors: string[]
+  ): void {
     this.cpPresetLabel = cpPresetLabel;
     this.cpPresetColors = cpPresetColors;
   }
 
-  setColorFromString(value: string, emit: boolean = true, update: boolean = true): void {
+  public setColorFromString(
+    value: string,
+    emit: boolean = true,
+    update: boolean = true
+  ): void {
     let hsva: Hsva | null;
 
-    if (this.cpAlphaChannel === 'always' || this.cpAlphaChannel === 'forced') {
+    if (this.cpAlphaChannel === "always" || this.cpAlphaChannel === "forced") {
       hsva = this.service.stringToHsva(value, true);
 
       if (!hsva && !this.hsva) {
@@ -324,33 +398,50 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
 
       this.sliderH = this.hsva.h;
 
+      if (this.cpOutputFormat === "hex" && this.cpAlphaChannel === "disabled") {
+        this.hsva.a = 1;
+      }
+
       this.updateColorPicker(emit, update);
     }
   }
 
-  onResize(): void {
-    if (this.position === 'fixed') {
+  public onResize(): void {
+    if (this.position === "fixed") {
       this.setDialogPosition();
-    } else if (this.cpDialogDisplay !== 'inline') {
+    } else if (this.cpDialogDisplay !== "inline") {
       this.closeColorPicker();
     }
   }
 
-  onDragEnd(slider: string): void {
-    this.directiveInstance.sliderDragEnd({ slider: slider, color: this.outputColor });
+  public onDragEnd(slider: string): void {
+    this.directiveInstance.sliderDragEnd({
+      slider: slider,
+      color: this.outputColor
+    });
   }
 
-  onDragStart(slider: string): void {
-    this.directiveInstance.sliderDragStart({ slider: slider, color: this.outputColor });
+  public onDragStart(slider: string): void {
+    this.directiveInstance.sliderDragStart({
+      slider: slider,
+      color: this.outputColor
+    });
   }
 
-  onMouseDown(event: MouseEvent): void {
-    if (this.show &&
-      !this.isIE10 && this.cpDialogDisplay === 'popup' &&
+  public onMouseDown(event: MouseEvent): void {
+    if (
+      this.show &&
+      !this.isIE10 &&
+      this.cpDialogDisplay === "popup" &&
       event.target !== this.directiveElementRef.nativeElement &&
       !this.isDescendant(this.elRef.nativeElement, event.target) &&
-      !this.isDescendant(this.directiveElementRef.nativeElement, event.target) &&
-      this.cpIgnoredElements.filter((item: any) => item === event.target).length === 0) {
+      !this.isDescendant(
+        this.directiveElementRef.nativeElement,
+        event.target
+      ) &&
+      this.cpIgnoredElements.filter((item: any) => item === event.target)
+        .length === 0
+    ) {
       if (this.cpSaveClickOutside) {
         this.directiveInstance.colorSelected(this.outputColor);
       } else {
@@ -369,24 +460,24 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
   }
 
-  onAcceptColor(event: Event): void {
+  public onAcceptColor(event: Event): void {
     event.stopPropagation();
 
     if (this.outputColor) {
       this.directiveInstance.colorSelected(this.outputColor);
     }
 
-    if (this.cpDialogDisplay === 'popup') {
+    if (this.cpDialogDisplay === "popup") {
       this.closeColorPicker();
     }
   }
 
-  onCancelColor(event: Event): void {
+  public onCancelColor(event: Event): void {
     event.stopPropagation();
 
     this.setColorFromString(this.initialColor, true);
 
-    if (this.cpDialogDisplay === 'popup') {
+    if (this.cpDialogDisplay === "popup") {
       if (this.cpCmykEnabled) {
         this.directiveInstance.cmykChanged(this.cmykColor);
       }
@@ -399,83 +490,91 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     this.directiveInstance.colorCanceled();
   }
 
-  onFormatToggle(change: number): void {
-    const availableFormats = this.dialogInputFields.length -
-      (this.cpCmykEnabled ? 0 : 1);
+  public onFormatToggle(change: number): void {
+    const availableFormats =
+      this.dialogInputFields.length - (this.cpCmykEnabled ? 0 : 1);
 
-    const nextFormat = (((this.dialogInputFields.indexOf(this.format) + change) %
-      availableFormats) + availableFormats) % availableFormats;
+    const nextFormat =
+      (((this.dialogInputFields.indexOf(this.format) + change) %
+        availableFormats) +
+        availableFormats) %
+      availableFormats;
 
     this.format = this.dialogInputFields[nextFormat];
   }
 
-  onColorChange(value: { s: number, v: number, rgX: number, rgY: number }): void {
+  public onColorChange(value: {
+    s: number;
+    v: number;
+    rgX: number;
+    rgY: number;
+  }): void {
     this.hsva.s = value.s / value.rgX;
     this.hsva.v = value.v / value.rgY;
 
     this.updateColorPicker();
 
     this.directiveInstance.sliderChanged({
-      slider: 'lightness',
+      slider: "lightness",
       value: this.hsva.v,
       color: this.outputColor
     });
 
     this.directiveInstance.sliderChanged({
-      slider: 'saturation',
+      slider: "saturation",
       value: this.hsva.s,
       color: this.outputColor
     });
   }
 
-  onHueChange(value: { v: number, rgX: number }): void {
+  public onHueChange(value: { v: number; rgX: number }): void {
     this.hsva.h = value.v / value.rgX;
     this.sliderH = this.hsva.h;
 
     this.updateColorPicker();
 
     this.directiveInstance.sliderChanged({
-      slider: 'hue',
+      slider: "hue",
       value: this.hsva.h,
       color: this.outputColor
     });
   }
 
-  onValueChange(value: { v: number, rgX: number }): void {
+  public onValueChange(value: { v: number; rgX: number }): void {
     this.hsva.v = value.v / value.rgX;
 
     this.updateColorPicker();
 
     this.directiveInstance.sliderChanged({
-      slider: 'value',
+      slider: "value",
       value: this.hsva.v,
       color: this.outputColor
     });
   }
 
-  onAlphaChange(value: { v: number, rgX: number }): void {
+  public onAlphaChange(value: { v: number; rgX: number }): void {
     this.hsva.a = value.v / value.rgX;
 
     this.updateColorPicker();
 
     this.directiveInstance.sliderChanged({
-      slider: 'alpha',
+      slider: "alpha",
       value: this.hsva.a,
       color: this.outputColor
     });
   }
 
-  onHexInput(value: string | null): void {
+  public onHexInput(value: string | null): void {
     if (value === null) {
       this.updateColorPicker();
     } else {
-      if (value && value[0] !== '#') {
-        value = '#' + value;
+      if (value && value[0] !== "#") {
+        value = "#" + value;
       }
 
       let validHex = /^#([a-f0-9]{3}|[a-f0-9]{6})$/gi;
 
-      if (this.cpAlphaChannel === 'always') {
+      if (this.cpAlphaChannel === "always") {
         validHex = /^#([a-f0-9]{3}|[a-f0-9]{6}|[a-f0-9]{8})$/gi;
       }
 
@@ -483,13 +582,16 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
 
       if (valid) {
         if (value.length < 5) {
-          value = '#' + value.substring(1)
-            .split('')
-            .map(c => c + c)
-            .join('');
+          value =
+            "#" +
+            value
+              .substring(1)
+              .split("")
+              .map(c => c + c)
+              .join("");
         }
 
-        if (this.cpAlphaChannel === 'forced') {
+        if (this.cpAlphaChannel === "forced") {
           value += Math.round(this.hsva.a * 255).toString(16);
         }
 
@@ -497,7 +599,7 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
       }
 
       this.directiveInstance.inputChanged({
-        input: 'hex',
+        input: "hex",
         valid: valid,
         value: value,
         color: this.outputColor
@@ -505,7 +607,7 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
   }
 
-  onRedInput(value: { v: number, rg: number }): void {
+  public onRedInput(value: { v: number; rg: number }): void {
     const rgba = this.service.hsvaToRgba(this.hsva);
 
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
@@ -521,14 +623,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'red',
+      input: "red",
       valid: valid,
       value: rgba.r,
       color: this.outputColor
     });
   }
 
-  onBlueInput(value: { v: number, rg: number }): void {
+  public onBlueInput(value: { v: number; rg: number }): void {
     const rgba = this.service.hsvaToRgba(this.hsva);
 
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
@@ -544,14 +646,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'blue',
+      input: "blue",
       valid: valid,
       value: rgba.b,
       color: this.outputColor
     });
   }
 
-  onGreenInput(value: { v: number, rg: number }): void {
+  public onGreenInput(value: { v: number; rg: number }): void {
     const rgba = this.service.hsvaToRgba(this.hsva);
 
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
@@ -567,14 +669,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'green',
+      input: "green",
       valid: valid,
       value: rgba.g,
       color: this.outputColor
     });
   }
 
-  onHueInput(value: { v: number, rg: number }) {
+  public onHueInput(value: { v: number; rg: number }) {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -586,14 +688,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'hue',
+      input: "hue",
       valid: valid,
       value: this.hsva.h,
       color: this.outputColor
     });
   }
 
-  onValueInput(value: { v: number, rg: number }): void {
+  public onValueInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -603,14 +705,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'value',
+      input: "value",
       valid: valid,
       value: this.hsva.v,
       color: this.outputColor
     });
   }
 
-  onAlphaInput(value: { v: number, rg: number }): void {
+  public onAlphaInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -620,14 +722,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'alpha',
+      input: "alpha",
       valid: valid,
       value: this.hsva.a,
       color: this.outputColor
     });
   }
 
-  onLightnessInput(value: { v: number, rg: number }): void {
+  public onLightnessInput(value: { v: number; rg: number }): void {
     const hsla = this.service.hsva2hsla(this.hsva);
 
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
@@ -643,14 +745,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'lightness',
+      input: "lightness",
       valid: valid,
       value: hsla.l,
       color: this.outputColor
     });
   }
 
-  onSaturationInput(value: { v: number, rg: number }): void {
+  public onSaturationInput(value: { v: number; rg: number }): void {
     const hsla = this.service.hsva2hsla(this.hsva);
 
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
@@ -666,14 +768,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'saturation',
+      input: "saturation",
       valid: valid,
       value: hsla.s,
       color: this.outputColor
     });
   }
 
-  onCyanInput(value: { v: number, rg: number }): void {
+  public onCyanInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -683,14 +785,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'cyan',
+      input: "cyan",
       valid: true,
       value: this.cmyk.c,
       color: this.outputColor
     });
   }
 
-  onMagentaInput(value: { v: number, rg: number }): void {
+  public onMagentaInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -700,14 +802,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'magenta',
+      input: "magenta",
       valid: true,
       value: this.cmyk.m,
       color: this.outputColor
     });
   }
 
-  onYellowInput(value: { v: number, rg: number }): void {
+  public onYellowInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -717,14 +819,14 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'yellow',
+      input: "yellow",
       valid: true,
       value: this.cmyk.y,
       color: this.outputColor
     });
   }
 
-  onBlackInput(value: { v: number, rg: number }): void {
+  public onBlackInput(value: { v: number; rg: number }): void {
     const valid = !isNaN(value.v) && value.v >= 0 && value.v <= value.rg;
 
     if (valid) {
@@ -734,27 +836,27 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
     }
 
     this.directiveInstance.inputChanged({
-      input: 'black',
+      input: "black",
       valid: true,
       value: this.cmyk.k,
       color: this.outputColor
     });
   }
 
-  onAddPresetColor(event: any, value: string): void {
+  public onAddPresetColor(event: any, value: string): void {
     event.stopPropagation();
 
-    if (!this.cpPresetColors.filter((color) => (color === value)).length) {
+    if (!this.cpPresetColors.filter(color => color === value).length) {
       this.cpPresetColors = this.cpPresetColors.concat(value);
 
       this.directiveInstance.presetColorsChanged(this.cpPresetColors);
     }
   }
 
-  onRemovePresetColor(event: any, value: string): void {
+  public onRemovePresetColor(event: any, value: string): void {
     event.stopPropagation();
 
-    this.cpPresetColors = this.cpPresetColors.filter((color) => (color !== value));
+    this.cpPresetColors = this.cpPresetColors.filter(color => color !== value);
 
     this.directiveInstance.presetColorsChanged(this.cpPresetColors);
   }
@@ -777,11 +879,11 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
       this.directiveInstance.stateChanged(true);
 
       if (!this.isIE10) {
-        document.addEventListener('mousedown', this.listenerMouseDown);
-        document.addEventListener('touchstart', this.listenerMouseDown);
+        document.addEventListener("mousedown", this.listenerMouseDown);
+        document.addEventListener("touchstart", this.listenerMouseDown);
       }
 
-      window.addEventListener('resize', this.listenerResize);
+      window.addEventListener("resize", this.listenerResize);
     }
   }
 
@@ -792,19 +894,23 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
       this.directiveInstance.stateChanged(false);
 
       if (!this.isIE10) {
-        document.removeEventListener('mousedown', this.listenerMouseDown);
-        document.removeEventListener('touchstart', this.listenerMouseDown);
+        document.removeEventListener("mousedown", this.listenerMouseDown);
+        document.removeEventListener("touchstart", this.listenerMouseDown);
       }
 
-      window.removeEventListener('resize', this.listenerResize);
+      window.removeEventListener("resize", this.listenerResize);
 
-      if (!this.cdRef['destroyed']) {
+      if (!this.cdRef["destroyed"]) {
         this.cdRef.detectChanges();
       }
     }
   }
 
-  private updateColorPicker(emit: boolean = true, update: boolean = true, cmykInput: boolean = false): void {
+  private updateColorPicker(
+    emit: boolean = true,
+    update: boolean = true,
+    cmykInput: boolean = false
+  ): void {
     if (this.sliderDimMax) {
       if (this.cpColorMode === 2) {
         this.hsva.s = 0;
@@ -822,7 +928,9 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
         if (!cmykInput) {
           rgba = this.service.hsvaToRgba(this.hsva);
 
-          this.cmyk = this.service.denormalizeCMYK(this.service.rgbaToCmyk(rgba));
+          this.cmyk = this.service.denormalizeCMYK(
+            this.service.rgbaToCmyk(rgba)
+          );
         } else {
           rgba = this.service.cmykToRgb(this.service.normalizeCMYK(this.cmyk));
 
@@ -834,44 +942,72 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
         this.sliderH = this.hsva.h;
       }
 
-      hue = this.service.denormalizeRGBA(this.service.hsvaToRgba(new Hsva(this.sliderH || this.hsva.h, 1, 1, 1)));
+      hue = this.service.denormalizeRGBA(
+        this.service.hsvaToRgba(new Hsva(this.sliderH || this.hsva.h, 1, 1, 1))
+      );
 
       if (update) {
-        this.hslaText = new Hsla(Math.round((hsla.h) * 360), Math.round(hsla.s * 100), Math.round(hsla.l * 100),
-          Math.round(hsla.a * 100) / 100);
+        this.hslaText = new Hsla(
+          Math.round(hsla.h * 360),
+          Math.round(hsla.s * 100),
+          Math.round(hsla.l * 100),
+          Math.round(hsla.a * 100) / 100
+        );
 
-        this.rgbaText = new Rgba(rgba.r, rgba.g, rgba.b, Math.round(rgba.a * 100) / 100);
+        this.rgbaText = new Rgba(
+          rgba.r,
+          rgba.g,
+          rgba.b,
+          Math.round(rgba.a * 100) / 100
+        );
 
         if (this.cpCmykEnabled) {
-          this.cmykText = new Cmyk(this.cmyk.c, this.cmyk.m, this.cmyk.y, this.cmyk.k,
-            Math.round(this.cmyk.a * 100) / 100);
+          this.cmykText = new Cmyk(
+            this.cmyk.c,
+            this.cmyk.m,
+            this.cmyk.y,
+            this.cmyk.k,
+            Math.round(this.cmyk.a * 100) / 100
+          );
         }
 
-        const allowHex8 = this.cpAlphaChannel === 'always';
+        const allowHex8 = this.cpAlphaChannel === "always";
 
         this.hexText = this.service.rgbaToHex(rgba, allowHex8);
         this.hexAlpha = this.rgbaText.a;
       }
 
-      if (this.cpOutputFormat === 'auto') {
-        if (this.format !== ColorFormats.RGBA && this.format !== ColorFormats.CMYK) {
+      if (this.cpOutputFormat === "auto") {
+        if (
+          this.format !== ColorFormats.RGBA &&
+          this.format !== ColorFormats.CMYK
+        ) {
           if (this.hsva.a < 1) {
-            this.format = this.hsva.a < 1 ? ColorFormats.RGBA : ColorFormats.HEX;
+            this.format =
+              this.hsva.a < 1 ? ColorFormats.RGBA : ColorFormats.HEX;
           }
         }
       }
 
-      this.hueSliderColor = 'rgb(' + hue.r + ',' + hue.g + ',' + hue.b + ')';
-      this.alphaSliderColor = 'rgb(' + rgba.r + ',' + rgba.g + ',' + rgba.b + ')';
+      this.hueSliderColor = "rgb(" + hue.r + "," + hue.g + "," + hue.b + ")";
+      this.alphaSliderColor =
+        "rgb(" + rgba.r + "," + rgba.g + "," + rgba.b + ")";
 
-      this.outputColor = this.service.outputFormat(this.hsva, this.cpOutputFormat, this.cpAlphaChannel);
-      this.selectedColor = this.service.outputFormat(this.hsva, 'rgba', null);
+      this.outputColor = this.service.outputFormat(
+        this.hsva,
+        this.cpOutputFormat,
+        this.cpAlphaChannel
+      );
+      this.selectedColor = this.service.outputFormat(this.hsva, "rgba", null);
 
       if (this.format !== ColorFormats.CMYK) {
-        this.cmykColor = '';
+        this.cmykColor = "";
       } else {
-        if (this.cpAlphaChannel === 'always' || this.cpAlphaChannel === 'enabled' ||
-          this.cpAlphaChannel === 'forced') {
+        if (
+          this.cpAlphaChannel === "always" ||
+          this.cpAlphaChannel === "enabled" ||
+          this.cpAlphaChannel === "forced"
+        ) {
           const alpha = Math.round(this.cmyk.a * 100) / 100;
 
           this.cmykColor = `cmyka(${this.cmyk.c},${this.cmyk.m},${this.cmyk.y},${this.cmyk.k},${alpha})`;
@@ -900,31 +1036,34 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
   // Private helper functions for the color picker dialog positioning
 
   private setDialogPosition(): void {
-    if (this.cpDialogDisplay === 'inline') {
-      this.position = 'relative';
+    if (this.cpDialogDisplay === "inline") {
+      this.position = "relative";
     } else {
-      let position = 'static', transform = '', style;
+      let position = "static",
+        transform = "",
+        style;
 
-      let parentNode: any = null, transformNode: any = null;
+      let parentNode: any = null,
+        transformNode: any = null;
 
       let node = this.directiveElementRef.nativeElement.parentNode;
 
       const dialogHeight = this.dialogElement.nativeElement.offsetHeight;
 
-      while (node !== null && node.tagName !== 'HTML') {
+      while (node !== null && node.tagName !== "HTML") {
         style = window.getComputedStyle(node);
-        position = style.getPropertyValue('position');
-        transform = style.getPropertyValue('transform');
+        position = style.getPropertyValue("position");
+        transform = style.getPropertyValue("transform");
 
-        if (position !== 'static' && parentNode === null) {
+        if (position !== "static" && parentNode === null) {
           parentNode = node;
         }
 
-        if (transform && transform !== 'none' && transformNode === null) {
+        if (transform && transform !== "none" && transformNode === null) {
           transformNode = node;
         }
 
-        if (position === 'fixed') {
+        if (position === "fixed") {
           parentNode = transformNode;
 
           break;
@@ -933,10 +1072,16 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
         node = node.parentNode;
       }
 
-      const boxDirective = this.createDialogBox(this.directiveElementRef.nativeElement, (position !== 'fixed'));
+      const boxDirective = this.createDialogBox(
+        this.directiveElementRef.nativeElement,
+        position !== "fixed"
+      );
 
-      if (this.useRootViewContainer || (position === 'fixed' &&
-        (!parentNode || parentNode instanceof HTMLUnknownElement))) {
+      if (
+        this.useRootViewContainer ||
+        (position === "fixed" &&
+          (!parentNode || parentNode instanceof HTMLUnknownElement))
+      ) {
         this.top = boxDirective.top;
         this.left = boxDirective.left;
       } else {
@@ -944,29 +1089,90 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
           parentNode = node;
         }
 
-        const boxParent = this.createDialogBox(parentNode, (position !== 'fixed'));
+        const boxParent = this.createDialogBox(
+          parentNode,
+          position !== "fixed"
+        );
 
         this.top = boxDirective.top - boxParent.top;
         this.left = boxDirective.left - boxParent.left;
       }
 
-      if (position === 'fixed') {
-        this.position = 'fixed';
+      if (position === "fixed") {
+        this.position = "fixed";
       }
 
-      if (this.cpPosition === 'left') {
-        this.top += boxDirective.height * this.cpPositionOffset / 100 - this.dialogArrowOffset;
-        this.left -= this.cpWidth + this.dialogArrowSize - 2;
-      } else if (this.cpPosition === 'top') {
+      let usePosition = this.cpPosition;
+
+      if (this.cpPosition === "auto") {
+        let usePositionX = "right";
+        let usePositionY = "bottom";
+
+        const winWidth = Math.max(
+          document.documentElement.clientWidth,
+          window.innerWidth || 0
+        );
+        const winHeight = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight || 0
+        );
+
+        if (this.left + this.cpWidth > winWidth) {
+          usePositionX = "left";
+        }
+
+        if (this.top + dialogHeight > winHeight) {
+          usePositionY = "top";
+        }
+
+        usePosition = usePositionX + "-" + usePositionY;
+      }
+
+      this.cpUsePosition = usePosition;
+
+      if (usePosition === "top") {
         this.arrowTop = dialogHeight - 1;
 
         this.top -= dialogHeight + this.dialogArrowSize;
-        this.left += this.cpPositionOffset / 100 * boxDirective.width - this.dialogArrowOffset;
-      } else if (this.cpPosition === 'bottom') {
+        this.left +=
+          (this.cpPositionOffset / 100) * boxDirective.width -
+          this.dialogArrowOffset;
+      } else if (usePosition === "bottom") {
         this.top += boxDirective.height + this.dialogArrowSize;
-        this.left += this.cpPositionOffset / 100 * boxDirective.width - this.dialogArrowOffset;
+        this.left +=
+          (this.cpPositionOffset / 100) * boxDirective.width -
+          this.dialogArrowOffset;
+      } else if (usePosition === "top-left" || usePosition === "left-top") {
+        this.top -=
+          dialogHeight -
+          boxDirective.height +
+          (boxDirective.height * this.cpPositionOffset) / 100;
+        this.left -=
+          this.cpWidth + this.dialogArrowSize - 2 - this.dialogArrowOffset;
+      } else if (usePosition === "top-right" || usePosition === "right-top") {
+        this.top -=
+          dialogHeight -
+          boxDirective.height +
+          (boxDirective.height * this.cpPositionOffset) / 100;
+        this.left +=
+          boxDirective.width +
+          this.dialogArrowSize -
+          2 -
+          this.dialogArrowOffset;
+      } else if (
+        usePosition === "left" ||
+        usePosition === "bottom-left" ||
+        usePosition === "left-bottom"
+      ) {
+        this.top +=
+          (boxDirective.height * this.cpPositionOffset) / 100 -
+          this.dialogArrowOffset;
+        this.left -= this.cpWidth + this.dialogArrowSize - 2;
       } else {
-        this.top += boxDirective.height * this.cpPositionOffset / 100 - this.dialogArrowOffset;
+        // usePosition === 'right' || usePosition === 'bottom-right' || usePosition === 'right-bottom'
+        this.top +=
+          (boxDirective.height * this.cpPositionOffset) / 100 -
+          this.dialogArrowOffset;
         this.left += boxDirective.width + this.dialogArrowSize - 2;
       }
     }
@@ -990,8 +1196,11 @@ export class NgxColorPickerComponent implements OnInit, OnDestroy, AfterViewInit
 
   private createDialogBox(element: any, offset: boolean): any {
     return {
-      top: element.getBoundingClientRect().top + (offset ? window.pageYOffset : 0),
-      left: element.getBoundingClientRect().left + (offset ? window.pageXOffset : 0),
+      top:
+        element.getBoundingClientRect().top + (offset ? window.pageYOffset : 0),
+      left:
+        element.getBoundingClientRect().left +
+        (offset ? window.pageXOffset : 0),
       width: element.offsetWidth,
       height: element.offsetHeight
     };
