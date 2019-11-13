@@ -198,10 +198,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/fire@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-5.2.1.tgz#4b966aaed10cda0b430c9d80769b39d08032004d"
-  integrity sha512-pS4zWhLLANzMbYVIKNtebDQKhm9+KANUDvDV6DwKP24XHzkZdvazKe1HC6uXWlf7QmDxSPFleCSBkn0tnQQzdQ==
+"@angular/fire@5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-5.2.3.tgz#a4be89ef7684f0af41a430ba41436f99e9178f68"
+  integrity sha512-bDxjnsUkPmWi2Tmk6Jq/veUi+Ot1FX/Rr+tQYYHk7E2XD2F+et3Bz8UNvLMliMf9NRIUzmR7Br92ZBUBNvd2UA==
 
 "@angular/flex-layout@8.0.0-beta.27":
   version "8.0.0-beta.27"
@@ -1089,35 +1089,35 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
-"@ngrx/data@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/data/-/data-8.5.0.tgz#583ab3e65bde5f6a73c8ad1a67a740b2313137b5"
-  integrity sha512-IS+ZgpKjUUgXJR086RsbUT41R7eAghMAEMRaF0QHv0onuxJqkx2OorvytK4DRqAX9Jh1er2mbz08McOoKInu+A==
+"@ngrx/data@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/data/-/data-8.5.1.tgz#e94a1e4de4e6d7c55fa5d081fbbcb3c756b5ed15"
+  integrity sha512-E3dw3YxiIv8PTtiLsAHv5R1DvhaiW0dsnCl3NcoFO+0DAJfmo9NOBab+82bgAGpao3YDd9l/+8YdP4qNygDdkg==
 
-"@ngrx/effects@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.5.0.tgz#cfccfc84fc91a1ead34f41dae9b0b99e227cb4da"
-  integrity sha512-Ac60DGM2rV4Xd9DONFuhStGZJMffQF+uL69pd1a144WPtfSWWBWzo5sHeZOKs7O9YmfqXiihs1DfCKmGaJOciw==
+"@ngrx/effects@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.5.1.tgz#d8ffca66d77db678f6fcdd6a11bc38a433c7bede"
+  integrity sha512-xb5GfXCN13wEUhe5YUN5t9GeP+DzCJYKwtB2pMR94gqMOU2eQdE3qmglRZIMLjsENSAtnFO7i11FPrwG31Jkyw==
 
-"@ngrx/entity@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.5.0.tgz#8e42ef02362939dd3d5b904767f47083d0efb754"
-  integrity sha512-3s/ULg43C8TPTTHPVwF2RS4/1xngZM9NbwfNARnS1jF/DN1EKh0R0z4OEq42016WsQm/qjGS7k4kq8OrJt6KIA==
+"@ngrx/entity@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.5.1.tgz#8d9d281ff6a9e45b471dd39a46c707e82ed10456"
+  integrity sha512-v8h0O0sCYSEsbthfGHEFtKX4Sf/tU9dAQz/MtxG2DHL/UDzX47nS9+YmAEtnk+iRNzOlTFTFtoVtQAuCJONHUg==
 
-"@ngrx/schematics@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-8.5.0.tgz#24335a30e7759d0b5f8f88fce840d11d1e040a49"
-  integrity sha512-MjC/HAwiG5+oJdp+6hYbRHyeisbSdS4LsnYkhkBziUZeKOtIYjyjHO937rmCmV7JfNacTeCcuZ6uITDLPmj5SQ==
+"@ngrx/schematics@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-8.5.1.tgz#3b3ebf4d257ffde6bad4e2665e6cc8c61c50b0c7"
+  integrity sha512-H5OrvTEmMo+HhbUerEsN4ZelMrlC0wqRdkHFDbC6gOLSeEhCThNX3q8eQiureFJdi6WiT7HS6NPiXCOwwDMQzw==
 
-"@ngrx/store-devtools@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.5.0.tgz#1e5cdeb7a0e212341f76a3764c79b8559b649cf0"
-  integrity sha512-v3LPXb9KzK+CDySYBUGl9jxTwQ/mRrgE8cF4e2Fsl72GiBDuSY0ZGapM612hB6w0QMxm+NI50D/jRNwOMqjM2Q==
+"@ngrx/store-devtools@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.5.1.tgz#17ad7b605ff85d30d7ffbee9bf43f928583cf010"
+  integrity sha512-Eml2tV1GkGA7ctnCH7DGKSaQEKtqbFPdnGjgyVyZilKC1oSonsw6U5+vfG3t11CgGSTyZQvi+wQLbmNiKuqQ/g==
 
-"@ngrx/store@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.5.0.tgz#4ee6c7d15db71aadc0aeafdd22ed4c18fb4a6fb5"
-  integrity sha512-PF+yi3CjRDkuJ7uPNW/2WAXSIs6iZHpC9RRnvbQ76D7c2qaq5AThnGGhPaB/tEuNZS0wv9z+0IoxeESJOe9jIg==
+"@ngrx/store@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.5.1.tgz#5141610bfd67675f5bc7d31edd1fc996c330675a"
+  integrity sha512-KIQ9Ooro0tl3+ohTpSXvvVUlo40TTLWAWFx2Ys8pI1Yqr39O9da3PNWecLA/2q4YmFf1bO072lYmcBTp1+Shvg==
 
 "@ngtools/webpack@8.3.18":
   version "8.3.18"
@@ -1376,10 +1376,10 @@
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
   integrity sha512-1w52Nyx4Gq47uuu0EVcsHBxZFJgurQ+rTKS3qMHxR1GY2T8c2AJYd6vZoZ9q1rupaDjU0yT+Jc2XTyXkjeMA+Q==
 
-"@types/marked@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.0.tgz#b9de675412d26515b069ad478cf43165816d1d90"
-  integrity sha512-UcrlF5NyA7DwckjJeE7xUfEB83i4a3KsS+dH7/gqWKJnTnUOW0W0eL52EhtB6+nKw9LTX/IS5nsK3wDhjZ1GAA==
+"@types/marked@0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.1.tgz#2f56cb2aa942efde23bd2beb9e07f4b6ddd25563"
+  integrity sha512-QMgeCgUMyNKfteIzmVuFcyGXORiD67fbEQbwbfJLIn+HejcyaQm0H00q66PJz8bMb8Ve4JrsJ2JXuStyZ4DjZg==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -3278,10 +3278,15 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-"d3-array@1.2.0 - 2", d3-array@2.3.3:
+"d3-array@1.2.0 - 2":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.3.3.tgz#e90c39fbaedccedf59fc30473092f99a0e14efa2"
   integrity sha512-syv3wp0U5aB6toP2zb2OdBkhTy1MWDsCAaYk6OXJZv+G4u7bSWEmYgxLoFyc88RQUhZYGCebW9a9UD1gFi5+MQ==
+
+d3-array@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.4.0.tgz#87f8b9ad11088769c82b5ea846bcb1cc9393f242"
+  integrity sha512-KQ41bAF2BMakf/HdKT865ALd4cgND6VcIztVQZUTt0+BH3RWy6ZYnHghVXf6NFjt2ritLr8H1T8LreAAlfiNcw==
 
 d3-axis@^1.0.12:
   version "1.0.12"
@@ -9155,14 +9160,10 @@ ts-node@8.4.1:
     source-map-support "^0.5.6"
     yn "^3.0.0"
 
-tsickle@0.37.0:
-  version "0.37.0"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.37.0.tgz#cc8a174310ac349913c62477b346db4f342c87d1"
-  integrity sha512-ufUZqLUNqh+kOfr52N/hJ5JbiDO32/CO7ZCteZBX9HA2kiejwEgDaJeJe1GAj2TIu683IgTA/LPKvlns6Liw0w==
-  dependencies:
-    minimist "^1.2.0"
-    mkdirp "^0.5.1"
-    source-map "^0.7.3"
+tsickle@0.37.1:
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.37.1.tgz#2f8a87c1b15766e866457bd06fb6c0e0d84eed09"
+  integrity sha512-0GwgOJEnsmRsrONXCvcbAWY0CvdqF3UugPVoupUpA8Ul0qCPTuqqq0ou/hLqtKZOyyulzCP6MYRjb9/J1g9bJg==
 
 tslib@1.10.0, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
