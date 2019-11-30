@@ -122,7 +122,7 @@
     "protractor": "5.4.2",
     "swagger-ui-dist": "3.24.3",
     "ts-loader": "6.2.1",
-    "ts-node": "^8.5.3",
+    "ts-node": "8.5.4",
     "tsickle": "0.37.1",
     "tslint": "5.20.1",
     "typescript": "3.5.3",
